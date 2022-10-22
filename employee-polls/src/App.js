@@ -10,21 +10,25 @@ import { connect } from "react-redux";
 import { hanldeDataRetrieval } from './Actions/Shared';
 
 function App(props) {
-useEffect(() => {
-  props.dispatch(hanldeDataRetrieval());
-}, [])
 
-  return (
+  useEffect(() => {
+    props.dispatch(hanldeDataRetrieval());
+  })
+
+  return props.authedUser ? (
     <div className="App">
       <Routes>
-        <Route path="/" exact element={<Login />} />
-        <Route path="/home" exact element={<Dashboard />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/" exact element={<Dashboard />} />
+        <Route path="/leaderboard" element={<Leaderboard />}/>
         <Route path="/add" element={<PollCreator />} />
-        <Route path="/poll" element={<Poll />} />
+        <Route path="/questions/:question_id" element={<Poll />} />
       </Routes>
     </div>
-  );
+  ): <Login />;
 }
 
-export default connect()(App);
+const mapStateToProps = ({ authedUser }) => ({
+  authedUser
+});
+
+export default connect(mapStateToProps)(App);

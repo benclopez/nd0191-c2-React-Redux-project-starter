@@ -1,11 +1,18 @@
+# Employee Polls Project
+
+This project is to allow a user to create and manage employee polls using React/Redux. I used React Material components and react-router as well as wrote tests with Jest.
+Follow the instructions below to first run `npm install` to download all necessary dependencies and then `npm start` to run the project.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory (employee-polls), you run (in order):
 
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.\
