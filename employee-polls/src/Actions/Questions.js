@@ -1,5 +1,5 @@
 import { saveQuestion, saveQuestionAnswer } from "../Utils/api";
-import { saveUsers } from "./Users";
+import { saveUsers, saveUserAnswer } from "./Users";
 export const GET_QUESTIONS = "GET_QUESTIONS";
 export const SAVE_QUESTION = "SAVE_QUESTION";
 export const SAVE_QUESTION_ANSWER = "SAVE_QUESTION_ANSWER";
@@ -29,8 +29,7 @@ export function handleSaveQuestion(question, users) {
         })
             .then((question) => {
                 dispatch(saveNewQuestion(question));
-                users[question.author].questions.push(question.id);
-                dispatch(saveUsers(users));
+                dispatch(saveUsers(users, question));
             });
     };
 }
@@ -48,12 +47,13 @@ function saveAnswer({ authedUser, qid, answer }) {
 export function handleSaveQuestionAnswer(answer, users) {
     return (dispatch) => {
       dispatch(saveAnswer(answer));
-  
+      dispatch(saveUserAnswer(users, answer));
+      
       return saveQuestionAnswer(answer).catch((e) => {
         console.warn("Error in handleSaveQuestionAnswer: ", e);
         dispatch(saveAnswer(answer));
-        users[answer.authedUser].answers.push(answer.qid);
-        dispatch(saveUsers(users));
+        //users[answer.authedUser].answers.push(answer.qid);
+        dispatch(saveUserAnswer(users, answer));
         alert("The was an error saving your answer. Try again.");
       });
     };

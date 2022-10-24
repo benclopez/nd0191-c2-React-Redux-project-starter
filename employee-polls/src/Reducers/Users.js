@@ -1,4 +1,4 @@
-import { GET_USERS, SET_AUTHED_USER, SAVE_USER } from "../Actions/Users";
+import { GET_USERS, SET_AUTHED_USER, SAVE_QUESTION_USER, SAVE_ANSWER_USER } from "../Actions/Users";
 
 export function users(state = {}, action) {
   switch (action.type) {
@@ -7,11 +7,16 @@ export function users(state = {}, action) {
         ...state,
         ...action.users,
       };
-      case SAVE_USER:
-        return {
-          ...state,
-          ...action.users,
-        };
+    case SAVE_QUESTION_USER:
+      return {
+        ...state,
+        ...action.users,
+      };
+    case SAVE_ANSWER_USER:
+      return {
+        ...state,
+        ...action.users,
+      };
     default:
       return state;
   }
