@@ -27,19 +27,19 @@ function PollCreator({ dispatch, authedUser, users }) {
     };
 
     return (
-        <div className="polls-login">
+        <div data-testid="poll-creator">
             <NavBar />
             <h2>Would You Rather</h2>
             <div>Create Your Own Poll</div>
             <div className="question-text-field">
                 First Option
-                <TextField fullWidth id="filled-basic" value={optionOne} label="Option One" variant="filled" onChange={handleOptionOneChange} />
+                <TextField inputProps={{ "data-testid": "option-one-input" }} fullWidth id="filled-basic" value={optionOne} label="Option One" variant="filled" onChange={handleOptionOneChange} />
             </div>
             <div className="question-text-field-option-two">
                 Second Option
-                <TextField fullWidth id="filled-basic" value={optionTwo} label="Option Two" variant="filled" onChange={handleOptionTwoChange} />
+                <TextField inputProps={{ "data-testid": "option-two-input" }} fullWidth id="filled-basic" value={optionTwo} label="Option Two" variant="filled" onChange={handleOptionTwoChange} />
             </div>
-            <Button variant="contained" disabled={optionOne === "" || optionTwo === ""} onClick={handleSubmit}>Submit</Button>
+            <Button data-testid="submit-button" variant="contained" disabled={optionOne === "" || optionTwo === ""} onClick={handleSubmit}>Submit</Button>
         </div>
 
     );
