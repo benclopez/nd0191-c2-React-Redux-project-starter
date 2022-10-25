@@ -1,0 +1,27 @@
+.polls-answer {
+    display: flex;
+    text-align: center;
+}
+
+.poll-text-field {
+    padding: 8px;
+    width: 50%;
+}
+
+.poll-text-field-option-two {
+    padding: 8px;
+    width: 50%;
+}
+
+.poll-answer-button {
+    margin-bottom: 4px;
+    justify-content: space-around;
+}
+
+.poll-image {
+    width: 10%;
+}
+
+.user-voted {
+    background-color: chartreuse !important;
+}

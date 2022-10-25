@@ -1,0 +1,31 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-bar ul {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    padding-left: 8px;
+}
+
+.nav-bar li:first-child {
+    padding-left: 0;
+}
+
+ul {
+    padding-left: 0;
+    margin-right: 4px;
+}
+
+li {
+    list-style-type: none;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.username {
+    padding-right: 4px;
+    align-self: center;
+}
