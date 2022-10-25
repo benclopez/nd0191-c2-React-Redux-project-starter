@@ -8,6 +8,7 @@ import Poll from './Poll/Poll';
 import { useEffect } from 'react';
 import { connect } from "react-redux";
 import { hanldeDataRetrieval } from './Actions/Shared';
+import Page404 from './Page404/Page404';
 
 function App(props) {
 
@@ -18,6 +19,7 @@ function App(props) {
   return props.authedUser ? (
     <div className="App">
       <Routes>
+        <Route path="*" element={<Page404 />} />
         <Route path="/" exact element={<Dashboard />} />
         <Route path="/leaderboard" element={<Leaderboard />}/>
         <Route path="/add" element={<PollCreator />} />

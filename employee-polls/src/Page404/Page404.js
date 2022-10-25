@@ -1,6 +1,9 @@
+import NavBar from '../NavBar/NavBar';
+
 function Page404() {
     return (
         <div>
+            <NavBar />
             <h1>
                 Page 404
             </h1>
