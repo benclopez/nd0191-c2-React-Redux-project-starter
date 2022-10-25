@@ -15,15 +15,17 @@ In the project directory (employee-polls), you run (in order):
 ### `npm install`
 ### `npm start`
 
-Running tests:
-https://jestjs.io/docs/getting-started
-Based off documentation you run `npm test` to launch tests.
-
-How to login:
+### How to login:
 In _DATA.js you can choose any user's user id/password combination.
 Example: 
 Username: tylermcginnis
 Password: abc321
+
+### Running tests:
+https://jestjs.io/docs/getting-started
+Based off documentation you run `npm test` to launch tests.
+
+Press a to run all tests in Jest.
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
